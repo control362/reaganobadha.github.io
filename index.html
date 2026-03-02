@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reagan Obadha — Blockchain & Fintech Engineer</title>
+<meta name="description" content="Reagan Obadha — Blockchain Engineer, Fintech Systems Architect, Cybersecurity Specialist. Builder of ChainPay banking-grade infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+:root {
+  --white: #ffffff;
+  --off-white: #f6f8fc;
+  --gray-50: #f2f4f8;
+  --gray-100: #e8ecf4;
+  --gray-200: #d1d8e8;
+  --gray-400: #8b94b0;
+  --gray-600: #4a5270;
+  --gray-800: #1a1f3a;
+  --black: #0d0f20;
+  --blue: #1a56ff;
+  --blue-light: #eaedff;
+  --blue-dark: #0f38cc;
+  --green: #00c896;
+  --green-light: #e0faf4;
+  --orange: #ff6b2b;
+  --orange-light: #fff1ec;
+  --purple: #7c3aff;
+  --purple-light: #f0ebff;
+  --shadow-sm: 0 1px 4px rgba(13,15,30,0.05);
+  --shadow-md: 0 4px 18px rgba(13,15,30,0.09);
+  --shadow-lg: 0 10px 40px rgba(13,15,30,0.12);
+  --shadow-xl: 0 24px 64px rgba(13,15,30,0.16);
+  --r-sm: 10px; --r-md: 16px; --r-lg: 24px; --r-xl: 32px; --r-full: 9999px;
+}
+body { font-family:'Plus Jakarta Sans',sans-serif; background:var(--white); color:var(--gray-800); line-height:1.6; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+::-webkit-scrollbar{width:4px} ::-webkit-scrollbar-track{background:var(--gray-50)} ::-webkit-scrollbar-thumb{background:var(--blue);border-radius:99px}
+
+/* ─── NAV ─── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;background:rgba(255,255,255,0.93);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--gray-100);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:var(--shadow-md)}
+.nav-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.18rem;color:var(--black);text-decoration:none;display:flex;align-items:center;gap:7px}
+.logo-blob{width:9px;height:9px;background:var(--blue);border-radius:50%}
+.nav-menu{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-menu a{font-size:.875rem;font-weight:500;color:var(--gray-600);text-decoration:none;padding:.45rem .85rem;border-radius:var(--r-full);transition:all .18s}
+.nav-menu a:hover{color:var(--blue);background:var(--blue-light)}
+.nav-cta{background:var(--blue);color:#fff;border:none;padding:.55rem 1.35rem;border-radius:var(--r-full);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.875rem;cursor:pointer;text-decoration:none;box-shadow:0 4px 14px rgba(26,86,255,.3);transition:all .2s}
+.nav-cta:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 6px 22px rgba(26,86,255,.4)}
+.burger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:5px}
+.burger span{display:block;width:21px;height:2px;background:var(--gray-800);border-radius:2px;transition:all .3s}
+.mob-nav{display:none;flex-direction:column;gap:2px;position:fixed;top:66px;left:0;right:0;background:#fff;border-bottom:1px solid var(--gray-100);padding:1rem 5%;z-index:998;box-shadow:var(--shadow-lg)}
+.mob-nav.show{display:flex}
+.mob-nav a{color:var(--gray-600);font-weight:500;font-size:.95rem;text-decoration:none;padding:.7rem 1rem;border-radius:var(--r-md);transition:all .18s}
+.mob-nav a:hover{background:var(--blue-light);color:var(--blue)}
+
+/* ─── HERO ─── */
+#home{min-height:100vh;padding-top:66px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;padding-left:5%;padding-right:5%;position:relative;overflow:hidden;background:var(--white)}
+.hblob1{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(26,86,255,.06) 0%,transparent 70%);top:-180px;right:-150px;pointer-events:none}
+.hblob2{position:absolute;width:380px;height:380px;background:radial-gradient(circle,rgba(0,200,150,.055) 0%,transparent 70%);bottom:60px;left:5%;pointer-events:none}
+.hero-l{position:relative;z-index:2;padding:100px 0 80px}
+.hero-chip{display:inline-flex;align-items:center;gap:7px;background:var(--blue-light);color:var(--blue);padding:.38rem 1rem;border-radius:var(--r-full);font-size:.77rem;font-weight:700;letter-spacing:.02em;margin-bottom:1.5rem;border:1px solid rgba(26,86,255,.16)}
+.chip-pulse{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pdot 2s infinite}
+@keyframes pdot{0%,100%{box-shadow:0 0 0 0 rgba(0,200,150,.5)}50%{box-shadow:0 0 0 5px rgba(0,200,150,0)}}
+.hero-h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2.2rem,4.2vw,3.8rem);font-weight:800;line-height:1.07;letter-spacing:-.03em;color:var(--black);margin-bottom:1.2rem}
+.hero-h1 .hl{background:linear-gradient(130deg,var(--blue) 0%,var(--purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.4rem}
+.htag{background:var(--gray-50);border:1px solid var(--gray-100);color:var(--gray-600);padding:.3rem .8rem;border-radius:var(--r-full);font-size:.78rem;font-weight:500}
+.hero-p{color:var(--gray-400);font-size:1rem;line-height:1.78;max-width:490px;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-pri{background:var(--blue);color:#fff;padding:.78rem 1.9rem;border-radius:var(--r-full);font-weight:700;font-size:.92rem;text-decoration:none;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(26,86,255,.32);transition:all .2s;display:inline-flex;align-items:center;gap:.45rem}
+.btn-pri:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(26,86,255,.42)}
+.btn-sec{background:#fff;color:var(--gray-800);padding:.78rem 1.9rem;border-radius:var(--r-full);font-weight:600;font-size:.92rem;text-decoration:none;border:1.5px solid var(--gray-200);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.45rem}
+.btn-sec:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.hero-stats{display:flex;gap:2.25rem;padding-top:2rem;border-top:1px solid var(--gray-100)}
+.hs-num{font-family:'Bricolage Grotesque',sans-serif;font-size:1.55rem;font-weight:800;color:var(--black);display:block;line-height:1}
+.hs-lbl{font-size:.73rem;color:var(--gray-400);font-weight:500;margin-top:3px}
+.hero-r{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;padding:80px 0}
+.photo-wrap{position:relative;width:410px;height:510px}
+.photo-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--blue-light) 0%,var(--purple-light) 100%);border-radius:var(--r-xl);transform:rotate(3.5deg)}
+.photo-card{position:relative;width:100%;height:100%;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-xl);background:var(--gray-100)}
+.photo-card img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.photo-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:140px;background:linear-gradient(to top,rgba(13,15,32,.45),transparent);pointer-events:none}
+.fl-card{position:absolute;background:#fff;border-radius:var(--r-md);padding:.8rem 1.1rem;box-shadow:var(--shadow-lg);z-index:3}
+.fl1{top:44px;left:-44px;animation:fly1 4s ease-in-out infinite}
+.fl2{bottom:90px;right:-44px;animation:fly1 4s ease-in-out infinite .9s}
+.fl3{top:165px;right:-38px;animation:fly1 4s ease-in-out infinite 1.8s}
+@keyframes fly1{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.fl-lbl{font-size:.65rem;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:.05em}
+.fl-val{font-family:'Bricolage Grotesque',sans-serif;font-size:.98rem;font-weight:800;color:var(--black);margin-top:1px}
+.fl-dot{width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block;margin-right:5px}
+.fl-ico{font-size:1.1rem;margin-bottom:3px}
+.fl-sub{font-size:.67rem;color:var(--gray-400);margin-top:1px}
+
+/* ─── SHARED ─── */
+.sec{padding:96px 5%}
+.sec-bg{background:var(--off-white)}
+.wrap{max-width:1200px;margin:0 auto}
+.stag{display:inline-flex;align-items:center;gap:5px;background:var(--blue-light);color:var(--blue);padding:.28rem .85rem;border-radius:var(--r-full);font-size:.73rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.9rem}
+.sh{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.75rem,2.8vw,2.5rem);font-weight:800;color:var(--black);letter-spacing:-.022em;line-height:1.15;margin-bottom:.9rem}
+.sh span{color:var(--blue)}
+.sp{color:var(--gray-400);font-size:.97rem;line-height:1.72;max-width:510px}
+
+/* ─── ABOUT ─── */
+#about .ag{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.adesc{color:var(--gray-600);font-size:.97rem;line-height:1.85;margin-bottom:1.1rem}
+.adesc strong{color:var(--black);font-weight:600}
+.edu-list{display:flex;flex-direction:column;gap:.6rem;margin-top:1.8rem}
+.edu-item{display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid var(--gray-100);border-radius:var(--r-md);padding:.9rem 1.15rem;box-shadow:var(--shadow-sm);transition:all .2s;cursor:default}
+.edu-item:hover{border-color:var(--blue);box-shadow:var(--shadow-md);transform:translateX(4px)}
+.edu-ico{width:42px;height:42px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0}
+.ico-b{background:var(--blue-light)} .ico-g{background:var(--green-light)} .ico-p{background:var(--purple-light)}
+.edu-name{font-weight:600;font-size:.875rem;color:var(--black)}
+.edu-sub{font-size:.73rem;color:var(--gray-400);margin-top:1px}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.ccard{background:#fff;border:1px solid var(--gray-100);border-radius:var(--r-md);padding:1.35rem;box-shadow:var(--shadow-sm);transition:all .22s;cursor:default;position:relative;overflow:hidden}
+.ccard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.ccard.cb::before{background:var(--blue)} .ccard.cg::before{background:var(--green)} .ccard.cp::before{background:var(--purple)} .ccard.co::before{background:var(--orange)}
+.ccard:hover{box-shadow:var(--shadow-lg);transform:translateY(-5px);border-color:transparent}
+.ccard:hover::before{transform:scaleX(1)}
+.cemi{font-size:1.55rem;margin-bottom:.65rem;display:block}
+.cname{font-weight:700;font-size:.875rem;color:var(--black);margin-bottom:.35rem}
+.cdesc{font-size:.75rem;color:var(--gray-400);line-height:1.6}
+
+/* ─── CHAINPAY ─── */
+#projects{background:var(--off-white)}
+.cp-wrap{max-width:1200px;margin:0 auto}
+.cp-card{background:#fff;border-radius:var(--r-xl);box-shadow:var(--shadow-lg);overflow:hidden;border:1px solid var(--gray-100)}
+.cp-top{background:linear-gradient(135deg,#0b0d1f 0%,#182060 55%,#0e38cc 100%);padding:3rem 3rem 2.5rem;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start}
+.cp-dot-bg{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.065) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.cp-ghost{position:absolute;right:-50px;top:50%;transform:translateY(-50%);font-size:260px;color:rgba(255,255,255,.04);font-family:sans-serif;pointer-events:none;user-select:none}
+.cptag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.78);padding:.3rem .85rem;border-radius:var(--r-full);font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.9rem}
+.cpname{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.9rem,3.8vw,3rem);font-weight:800;color:#fff;letter-spacing:-.025em;line-height:1;margin-bottom:.7rem}
+.cpdesc{color:rgba(255,255,255,.6);font-size:.97rem;line-height:1.65;max-width:560px}
+.cpbadges{display:flex;flex-direction:column;gap:.55rem;flex-shrink:0}
+.cpb{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.82);padding:.45rem 1rem;border-radius:var(--r-full);font-size:.72rem;font-weight:600;white-space:nowrap;text-align:center}
+.cpb.gr{background:rgba(0,200,150,.14);border-color:rgba(0,200,150,.28);color:#5fffcc}
+.cpbody{padding:2.5rem 3rem}
+
+.mstrip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--gray-100);border-radius:var(--r-lg);overflow:hidden;margin-bottom:2.5rem}
+.mi{padding:1.35rem;border-right:1px solid var(--gray-100);text-align:center;transition:background .18s}
+.mi:last-child{border-right:none}
+.mi:hover{background:var(--gray-50)}
+.mv{font-family:'Bricolage Grotesque',sans-serif;font-size:1.45rem;font-weight:800;color:var(--black)}
+.mv .ab{color:var(--blue)} .mv .ag2{color:var(--green)}
+.ml{font-size:.68rem;color:var(--gray-400);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:3px}
+
+.sl{font-size:.73rem;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.85rem;padding-bottom:.7rem;border-bottom:1px solid var(--gray-100)}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-bottom:2.5rem}
+.fc2{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:var(--r-md);padding:1.4rem;transition:all .22s;cursor:default}
+.fc2:hover{background:#fff;box-shadow:var(--shadow-md);border-color:transparent;transform:translateY(-3px)}
+.fci{width:40px;height:40px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:.8rem}
+.fib{background:var(--blue-light)} .fig{background:var(--green-light)} .fip{background:var(--purple-light)} .fio{background:var(--orange-light)}
+.fct{font-weight:700;font-size:.86rem;color:var(--black);margin-bottom:.35rem}
+.fcd{font-size:.76rem;color:var(--gray-400);line-height:1.58}
+.fctag{display:inline-block;margin-top:.65rem;background:#fff;border:1px solid var(--gray-200);padding:.15rem .55rem;border-radius:var(--r-full);font-size:.65rem;font-weight:600;color:var(--gray-600)}
+
+.pills{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2.5rem}
+.pill{background:#fff;border:1px solid var(--gray-200);padding:.28rem .78rem;border-radius:var(--r-full);font-size:.74rem;font-weight:600;color:var(--gray-600);transition:all .15s;cursor:default}
+.pill:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+.pill.pb{border-color:rgba(26,86,255,.22);color:var(--blue);background:var(--blue-light)}
+.pill.pg{border-color:rgba(0,200,150,.22);color:#009f78;background:var(--green-light)}
+.pill.pp{border-color:rgba(124,58,255,.22);color:var(--purple);background:var(--purple-light)}
+
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem}
+.scard{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:var(--r-md);padding:1.15rem;transition:all .2s}
+.scard:hover{background:#fff;box-shadow:var(--shadow-md)}
+.sc-r{display:flex;justify-content:space-between;align-items:center;margin-bottom:.65rem}
+.sc-n{font-size:.73rem;font-weight:600;color:var(--gray-600)}
+.sc-g{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.95rem}
+.sc-g.ga{color:var(--green)} .sc-g.gb,.sc-g.gbp{color:var(--blue)}
+.sbar{height:4px;background:var(--gray-100);border-radius:99px;overflow:hidden}
+.sfill{height:100%;background:linear-gradient(90deg,var(--blue),var(--green));border-radius:99px}
+
+/* ─── SKILLS ─── */
+#skills{background:#fff}
+.sk-wrap{max-width:1200px;margin:0 auto}
+.tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.75rem}
+.tbtn{display:flex;align-items:center;gap:5px;padding:.5rem 1rem;border-radius:var(--r-full);border:1.5px solid var(--gray-100);background:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:600;color:var(--gray-600);cursor:pointer;transition:all .18s}
+.tbtn:hover{border-color:var(--blue);color:var(--blue)}
+.tbtn.on{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 4px 14px rgba(26,86,255,.28)}
+.spanel{display:none}
+.spanel.on{display:grid;grid-template-columns:repeat(2,1fr);gap:.65rem}
+.skc{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:var(--r-md);padding:1.2rem;transition:all .2s;cursor:default}
+.skc:hover{background:#fff;box-shadow:var(--shadow-md);border-color:var(--blue);transform:translateY(-2px)}
+.sk-r{display:flex;justify-content:space-between;align-items:start;margin-bottom:.4rem}
+.skn{font-weight:700;font-size:.875rem;color:var(--black)}
+.skp{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.82rem;color:var(--blue)}
+.sks{font-size:.73rem;color:var(--gray-400);line-height:1.5;margin-bottom:.7rem}
+.skbar{height:4px;background:var(--gray-100);border-radius:99px;overflow:hidden}
+.skfill{height:100%;background:linear-gradient(90deg,var(--blue),var(--purple));border-radius:99px}
+.skfill.g{background:linear-gradient(90deg,var(--green),var(--blue))}
+
+/* ─── PHILOSOPHY ─── */
+#philosophy{background:var(--off-white)}
+.phg{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.plist{display:flex;flex-direction:column;gap:.85rem}
+.pcard{background:#fff;border:1px solid var(--gray-100);border-radius:var(--r-md);padding:1.4rem;display:flex;gap:1.15rem;transition:all .22s;cursor:default}
+.pcard:hover{box-shadow:var(--shadow-lg);transform:translateX(6px);border-color:var(--blue)}
+.pn{font-family:'Bricolage Grotesque',sans-serif;font-size:1.9rem;font-weight:800;color:var(--gray-100);line-height:1;flex-shrink:0;width:38px;transition:color .2s}
+.pcard:hover .pn{color:var(--blue-light)}
+.pt{font-weight:700;font-size:.875rem;color:var(--black);margin-bottom:.35rem}
+.pd{font-size:.77rem;color:var(--gray-400);line-height:1.65}
+.stride-card{background:#fff;border:1px solid var(--gray-100);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);margin-bottom:1.25rem}
+.stride-hdr{padding:.85rem 1.4rem;background:var(--gray-50);border-bottom:1px solid var(--gray-100);font-size:.72rem;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:.07em}
+.stride-row{display:flex;align-items:start;gap:.9rem;padding:.9rem 1.4rem;border-bottom:1px solid var(--gray-100);transition:background .15s}
+.stride-row:last-child{border-bottom:none}
+.stride-row:hover{background:var(--gray-50)}
+.sl2{width:26px;height:26px;background:var(--blue-light);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.8rem;color:var(--blue);flex-shrink:0}
+.st{font-weight:600;font-size:.83rem;color:var(--black)}
+.sc2{font-size:.72rem;color:var(--gray-400);margin-top:2px;line-height:1.4}
+.qbox{background:linear-gradient(135deg,var(--black) 0%,#1a2060 100%);border-radius:var(--r-lg);padding:1.9rem;position:relative;overflow:hidden}
+.qbox::before{content:'"';position:absolute;top:-.4rem;left:1.4rem;font-size:4.5rem;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:rgba(26,86,255,.3);line-height:1;pointer-events:none}
+.qt{font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.77;font-style:italic}
+.qa{margin-top:.9rem;font-size:.72rem;font-weight:600;color:var(--blue);letter-spacing:.03em}
+.owasp-wrap{margin-top:1.25rem;padding:1.35rem;background:#fff;border:1px solid var(--gray-100);border-radius:var(--r-md)}
+.ow-lbl{font-size:.72rem;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.65rem}
+
+/* ─── CONTACT ─── */
+#contact{background:#fff}
+.ctg{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start}
+.chlist{display:flex;flex-direction:column;gap:.65rem;margin:1.75rem 0}
+.chcard{display:flex;align-items:center;gap:.9rem;background:var(--gray-50);border:1px solid var(--gray-100);border-radius:var(--r-md);padding:.95rem 1.15rem;text-decoration:none;color:inherit;transition:all .2s}
+.chcard:hover{background:#fff;box-shadow:var(--shadow-md);border-color:var(--blue);transform:translateX(4px)}
+.chico{width:42px;height:42px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.ib{background:var(--blue-light)} .ig{background:var(--green-light)} .ip{background:var(--purple-light)}
+.chlb{font-size:.68rem;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:.05em}
+.chvl{font-size:.875rem;font-weight:600;color:var(--black);margin-top:1px}
+.charr{margin-left:auto;color:var(--gray-200);transition:all .2s}
+.chcard:hover .charr{color:var(--blue);transform:translateX(3px)}
+.avcrd{background:var(--green-light);border:1px solid rgba(0,200,150,.2);border-radius:var(--r-md);padding:1.1rem;display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.avdot{width:9px;height:9px;background:var(--green);border-radius:50%;animation:pdot 2s infinite;flex-shrink:0}
+.avtxt{font-size:.82rem;font-weight:600;color:#007a60}
+.cfcard{background:#fff;border:1px solid var(--gray-100);border-radius:var(--r-xl);padding:2.4rem;box-shadow:var(--shadow-md)}
+.cfh{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.25rem;color:var(--black);margin-bottom:.35rem}
+.cfs{font-size:.82rem;color:var(--gray-400);margin-bottom:1.65rem}
+.fr2{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.fg{margin-bottom:.7rem}
+.flb{display:block;font-size:.74rem;font-weight:600;color:var(--gray-600);margin-bottom:.38rem}
+.fi2,.fta{width:100%;background:var(--gray-50);border:1.5px solid var(--gray-100);border-radius:var(--r-md);padding:.72rem .95rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.875rem;color:var(--black);outline:none;transition:all .2s;resize:none}
+.fi2::placeholder,.fta::placeholder{color:var(--gray-200)}
+.fi2:focus,.fta:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px rgba(26,86,255,.08)}
+.fta{height:106px}
+.fsub{width:100%;background:var(--blue);color:#fff;border:none;border-radius:var(--r-full);padding:.88rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.92rem;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(26,86,255,.28);margin-top:.65rem}
+.fsub:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(26,86,255,.38)}
+
+/* ─── FOOTER ─── */
+footer{background:var(--black);padding:2.4rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.flogo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:#fff;font-size:.97rem}
+.fcopy{font-size:.75rem;color:rgba(255,255,255,.32)}
+.flinks{display:flex;gap:1.5rem}
+.flinks a{font-size:.75rem;color:rgba(255,255,255,.38);text-decoration:none;font-weight:500;transition:color .18s}
+.flinks a:hover{color:#fff}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.fu{opacity:0}.fu.vis{animation:fadeUp .6s ease forwards}
+.hero-l>*{opacity:0;animation:fadeUp .65s ease forwards}
+.hero-l>*:nth-child(1){animation-delay:.12s}
+.hero-l>*:nth-child(2){animation-delay:.26s}
+.hero-l>*:nth-child(3){animation-delay:.38s}
+.hero-l>*:nth-child(4){animation-delay:.5s}
+.hero-l>*:nth-child(5){animation-delay:.6s}
+.hero-l>*:nth-child(6){animation-delay:.7s}
+.hero-r{opacity:0;animation:fadeUp .85s ease forwards .38s}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:960px){
+  #home{grid-template-columns:1fr;min-height:auto;padding-bottom:3rem}
+  .hero-r{display:none}
+  #about .ag{grid-template-columns:1fr;gap:2.5rem}
+  .phg{grid-template-columns:1fr}
+  .ctg{grid-template-columns:1fr;gap:2.5rem}
+  .cp-top{grid-template-columns:1fr}
+  .cpbadges{flex-direction:row;flex-wrap:wrap}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .sgrid{grid-template-columns:1fr 1fr}
+  .mstrip{grid-template-columns:1fr 1fr}
+  .mi:nth-child(2){border-right:none}
+  .mi:nth-child(-n+2){border-bottom:1px solid var(--gray-100)}
+  .nav-menu,.nav-cta{display:none}
+  .burger{display:flex}
+}
+@media(max-width:600px){
+  .sec{padding:64px 4%}
+  .cpbody,.cp-top{padding:1.5rem}
+  .fgrid,.mstrip{grid-template-columns:1fr}
+  .sgrid{grid-template-columns:1fr 1fr}
+  .spanel.on{grid-template-columns:1fr}
+  .cgrid{grid-template-columns:1fr}
+  .fr2{grid-template-columns:1fr}
+  .hero-stats{gap:1.4rem}
+  .mi{border-right:none!important;border-bottom:1px solid var(--gray-100)}
+  .mi:last-child{border-bottom:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#home" class="nav-logo"><span class="logo-blob"></span>Reagan Obadha</a>
+  <ul class="nav-menu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">ChainPay</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire Me →</a>
+  <button class="burger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-nav" id="mobNav">
+  <a href="#about" onclick="closeNav()">About</a>
+  <a href="#projects" onclick="closeNav()">ChainPay Project</a>
+  <a href="#skills" onclick="closeNav()">Skills</a>
+  <a href="#philosophy" onclick="closeNav()">Philosophy</a>
+  <a href="#contact" onclick="closeNav()">Contact</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section id="home">
+  <div class="hblob1"></div><div class="hblob2"></div>
+  <div class="hero-l">
+    <div class="hero-chip"><span class="chip-pulse"></span>Open to Opportunities</div>
+    <h1 class="hero-h1">Building <span class="hl">Banking-Grade</span><br>Fintech Infrastructure</h1>
+    <div class="hero-tags">
+      <span class="htag">⬡ Blockchain Engineer</span>
+      <span class="htag">💳 Fintech Architect</span>
+      <span class="htag">🔐 Cybersecurity Specialist</span>
+    </div>
+    <p class="hero-p">I design financial systems that cannot fail — permissioned blockchains, AES-256-GCM encryption, AML compliance engines, and M-Pesa integrations built to real banking standards. Based in Kenya, building for the world.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-pri">⬡ View ChainPay</a>
+      <a href="#contact" class="btn-sec">Contact Me →</a>
+    </div>
+    <div class="hero-stats">
+      <div><span class="hs-num">AES-256</span><div class="hs-lbl">Encryption</div></div>
+      <div><span class="hs-num">SHA-3</span><div class="hs-lbl">Post-Quantum Hash</div></div>
+      <div><span class="hs-num">6+</span><div class="hs-lbl">Security Layers</div></div>
+      <div><span class="hs-num">ACID</span><div class="hs-lbl">DB Guarantees</div></div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="photo-wrap">
+      <div class="photo-bg"></div>
+      <div class="photo-card">
+        <img src="images/WhatsApp Image 2026-03-01 at 15.39.36.jpeg" alt="Reagan Obadha">
+      </div>
+      <div class="fl-card fl1">
+        <div><span class="fl-dot"></span><span class="fl-lbl">Status</span></div>
+        <div class="fl-val">Available</div>
+      </div>
+      <div class="fl-card fl2">
+        <div class="fl-ico">⬡</div>
+        <div class="fl-lbl">Flagship Project</div>
+        <div class="fl-val">ChainPay v2.0</div>
+        <div class="fl-sub">Banking-Grade Fintech</div>
+      </div>
+      <div class="fl-card fl3">
+        <div class="fl-ico">🔐</div>
+        <div class="fl-lbl">Design</div>
+        <div class="fl-val">Zero Trust</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about" class="sec sec-bg">
+  <div class="wrap">
+    <div class="ag">
+      <div>
+        <div class="stag">👤 About Me</div>
+        <h2 class="sh">Systems Engineer.<br><span>Security Architect.</span></h2>
+        <p class="adesc">I am a backend engineer specialising in <strong>financial infrastructure, cryptography, and blockchain technology</strong>. My work sits at the intersection of fintech security and distributed systems design.</p>
+        <p class="adesc">My flagship project, <strong>ChainPay</strong>, demonstrates architectural-level reasoning — double-entry ledgers, AML engines, HMAC-signed transaction chains, and M-Pesa integration built with the rigour of production banking software.</p>
+        <p class="adesc">Engineering philosophy: <strong><em>"Money is liability, and liability must be engineered with paranoia."</em></strong></p>
+        <div class="edu-list">
+          <div class="edu-item"><div class="edu-ico ico-b">🎓</div><div><div class="edu-name">B.Sc. Computer Science</div><div class="edu-sub">Egerton University · Njoro, Kenya</div></div></div>
+          <div class="edu-item"><div class="edu-ico ico-g">🔐</div><div><div class="edu-name">Technology Skills Training Certificate</div><div class="edu-sub">Modcom Institute of Technology · Westlands, Nairobi · 2023</div></div></div>
+          <div class="edu-item"><div class="edu-ico ico-p">⬡</div><div><div class="edu-name">ChainPay System Architect</div><div class="edu-sub">Banking-Grade Fintech System · Version 2.0</div></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="stag" style="margin-bottom:1.25rem">🧠 Core Competencies</div>
+        <div class="cgrid">
+          <div class="ccard cb fu"><span class="cemi">🔐</span><div class="cname">Security Engineering</div><p class="cdesc">AES-256-GCM, PBKDF2, HMAC-SHA3-256, JWT. OWASP Top 10 hardened architecture.</p></div>
+          <div class="ccard cg fu"><span class="cemi">⬡</span><div class="cname">Blockchain Architecture</div><p class="cdesc">Custom PoA chains, Merkle tree integrity, SHA-3 hash-chaining, post-quantum design.</p></div>
+          <div class="ccard cp fu"><span class="cemi">💳</span><div class="cname">Financial Systems</div><p class="cdesc">Double-entry ledger, ACID guarantees, integer minor-unit balances, M-Pesa Daraja API.</p></div>
+          <div class="ccard co fu"><span class="cemi">📋</span><div class="cname">AML / KYC Compliance</div><p class="cdesc">Automated rule engine, SAR generation, sanctions screening, FATF-aligned workflows.</p></div>
+          <div class="ccard cb fu"><span class="cemi">⚙️</span><div class="cname">Backend Engineering</div><p class="cdesc">FastAPI + Uvicorn ASGI, stateless REST, Python & Java, PostgreSQL, Git workflows.</p></div>
+          <div class="ccard cg fu"><span class="cemi">📊</span><div class="cname">Data & Analytics</div><p class="cdesc">Schema design, index optimization, reconciliation systems, data science tooling.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CHAINPAY ══ -->
+<section id="projects" class="sec">
+  <div class="cp-wrap">
+    <div style="margin-bottom:2.5rem">
+      <div class="stag">🏦 Flagship Project</div>
+      <h2 class="sh">ChainPay — <span>Banking-Grade</span> Fintech System</h2>
+      <p class="sp">A production-oriented multi-currency payment system with custom blockchain, cryptographic security, AML compliance, and M-Pesa interoperability.</p>
+    </div>
+    <div class="cp-card">
+      <div class="cp-top">
+        <div class="cp-dot-bg"></div>
+        <div class="cp-ghost">⬡</div>
+        <div>
+          <div class="cptag">⬡ Version 2.0 · Full Technical Documentation</div>
+          <h3 class="cpname">ChainPay</h3>
+          <p class="cpdesc">A banking-grade, multi-currency mobile money system integrating a custom permissioned blockchain, AML compliance engine, M-Pesa interoperability, and full-stack cryptographic security — built to production financial infrastructure standards.</p>
+        </div>
+        <div class="cpbadges">
+          <span class="cpb gr">✓ Production-Oriented</span>
+          <span class="cpb">⬡ Blockchain Layer</span>
+          <span class="cpb">⚑ AML Compliant</span>
+          <span class="cpb">🔐 Zero Trust</span>
+        </div>
+      </div>
+      <div class="cpbody">
+        <div class="mstrip">
+          <div class="mi"><div class="mv"><span class="ab">AES</span>-256</div><div class="ml">GCM Encryption</div></div>
+          <div class="mi"><div class="mv"><span class="ag2">SHA-3</span></div><div class="ml">Post-Quantum Hash</div></div>
+          <div class="mi"><div class="mv">100k</div><div class="ml">PBKDF2 Iterations</div></div>
+          <div class="mi"><div class="mv"><span class="ab">ACID</span></div><div class="ml">DB Guarantees</div></div>
+        </div>
+
+        <div class="sl">Engineering Highlights</div>
+        <div class="fgrid">
+          <div class="fc2 fu"><div class="fci fib">🔗</div><div class="fct">Permissioned Blockchain</div><p class="fcd">Custom Proof-of-Authority chain with SHA-3 hash-chained blocks, Merkle tree per block, O(1) tx lookup, and startup chain validation.</p><span class="fctag">SHA-3 · PoA · Merkle</span></div>
+          <div class="fc2 fu"><div class="fci fip">🔐</div><div class="fct">Cryptographic Stack</div><p class="fcd">AES-256-GCM authenticated encryption, PBKDF2 100k iterations, HMAC-SHA3-256 transaction signing. Zero weak algorithms.</p><span class="fctag">AES-GCM · PBKDF2 · HMAC</span></div>
+          <div class="fc2 fu"><div class="fci fig">📋</div><div class="fct">AML / KYC Engine</div><p class="fcd">Velocity limits, structuring (smurfing) detection, SAR auto-generation, OFAC-style sanctions screening, KYC gate enforcement.</p><span class="fctag">AML · SAR · KYC · OFAC</span></div>
+          <div class="fc2 fu"><div class="fci fio">📱</div><div class="fct">M-Pesa Integration</div><p class="fcd">Safaricom Daraja API STK Push with idempotency, state machine (PENDING→CONFIRMED/FAILED), CBK regulatory compliance.</p><span class="fctag">Daraja API · STK Push · CBK</span></div>
+          <div class="fc2 fu"><div class="fci fib">📒</div><div class="fct">Double-Entry Ledger</div><p class="fcd">Every debit has an offsetting credit enforced at DB level. INTEGER minor-unit balances eliminate floating-point errors entirely.</p><span class="fctag">ACID · WAL · Integer Balances</span></div>
+          <div class="fc2 fu"><div class="fci fig">🌍</div><div class="fct">Multi-Currency FX</div><p class="fcd">USD-pivot engine with live market simulation, 1.5% bid/ask spread, 30s TTL cache. Supports USD, EUR, GBP, KES, NGN.</p><span class="fctag">FX · USD-Pivot · 5 Currencies</span></div>
+        </div>
+
+        <div class="sl">Technology Stack</div>
+        <div class="pills">
+          <span class="pill pb">Python 3.10+</span><span class="pill pb">FastAPI</span><span class="pill pb">Uvicorn ASGI</span>
+          <span class="pill">SQLite WAL</span><span class="pill">PostgreSQL (prod)</span>
+          <span class="pill pg">AES-256-GCM</span><span class="pill pg">PBKDF2-SHA256</span><span class="pill pg">HMAC-SHA3-256</span><span class="pill pg">JWT HS256</span>
+          <span class="pill pp">Custom PoA Blockchain</span><span class="pill pp">Merkle Tree</span><span class="pill pp">SHA-3</span>
+          <span class="pill">Safaricom Daraja API</span><span class="pill">Redis (roadmap)</span><span class="pill">Kafka (roadmap)</span><span class="pill">PyInstaller</span>
+        </div>
+
+        <div class="sl">Production Readiness Assessment</div>
+        <div class="sgrid">
+          <div class="scard fu"><div class="sc-r"><span class="sc-n">Financial Integrity</span><span class="sc-g ga">A</span></div><div class="sbar"><div class="sfill" style="width:92%"></div></div></div>
+          <div class="scard fu"><div class="sc-r"><span class="sc-n">Security</span><span class="sc-g gbp">B+</span></div><div class="sbar"><div class="sfill" style="width:84%"></div></div></div>
+          <div class="scard fu"><div class="sc-r"><span class="sc-n">Compliance</span><span class="sc-g gbp">B+</span></div><div class="sbar"><div class="sfill" style="width:82%"></div></div></div>
+          <div class="scard fu"><div class="sc-r"><span class="sc-n">Auditability</span><span class="sc-g ga">A</span></div><div class="sbar"><div class="sfill" style="width:91%"></div></div></div>
+          <div class="scard fu"><div class="sc-r"><span class="sc-n">Scalability</span><span class="sc-g gb">B</span></div><div class="sbar"><div class="sfill" style="width:76%"></div></div></div>
+          <div class="scard fu"><div class="sc-r"><span class="sc-n">Resilience</span><span class="sc-g gbp">B+</span></div><div class="sbar"><div class="sfill" style="width:83%"></div></div></div>
+          <div class="scard fu"><div class="sc-r"><span class="sc-n">Observability</span><span class="sc-g gb">B</span></div><div class="sbar"><div class="sfill" style="width:75%"></div></div></div>
+          <div class="scard fu"><div class="sc-r"><span class="sc-n">Fraud Prevention</span><span class="sc-g gb">B</span></div><div class="sbar"><div class="sfill" style="width:78%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ══ -->
+<section id="skills" class="sec sec-bg">
+  <div class="sk-wrap">
+    <div style="margin-bottom:2.25rem">
+      <div class="stag">💻 Technical Skills</div>
+      <h2 class="sh">Deep <span>Technical</span> Expertise</h2>
+    </div>
+    <div class="tabs">
+      <button class="tbtn on" onclick="showTab('lang',this)">💻 Languages</button>
+      <button class="tbtn" onclick="showTab('back',this)">⚙️ Backend</button>
+      <button class="tbtn" onclick="showTab('cryp',this)">🔐 Cryptography</button>
+      <button class="tbtn" onclick="showTab('bloc',this)">⬡ Blockchain</button>
+      <button class="tbtn" onclick="showTab('fin',this)">💳 Financial Systems</button>
+      <button class="tbtn" onclick="showTab('db',this)">🗄️ Databases</button>
+      <button class="tbtn" onclick="showTab('dev',this)">🛠️ DevOps</button>
+    </div>
+    <div class="spanel on" id="t-lang">
+      <div class="skc"><div class="sk-r"><span class="skn">Python</span><span class="skp">90%</span></div><p class="sks">FastAPI · Cryptography lib · Hashlib · PyJWT · Pandas · Data Analysis</p><div class="skbar"><div class="skfill" style="width:90%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">Java</span><span class="skp">82%</span></div><p class="sks">OOP · Spring Framework fundamentals · Algorithm design · Data structures</p><div class="skbar"><div class="skfill" style="width:82%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">SQL</span><span class="skp">85%</span></div><p class="sks">Complex queries · Schema design · Index optimization · ACID transactions · WAL mode</p><div class="skbar"><div class="skfill" style="width:85%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">JavaScript / HTML / CSS</span><span class="skp">65%</span></div><p class="sks">Web technologies · Front-end fundamentals · DOM manipulation · Responsive layouts</p><div class="skbar"><div class="skfill" style="width:65%"></div></div></div>
+    </div>
+    <div class="spanel" id="t-back">
+      <div class="skc"><div class="sk-r"><span class="skn">FastAPI / Uvicorn</span><span class="skp">88%</span></div><p class="sks">ASGI · REST API design · OpenAPI auto-docs · Async Python · Validation</p><div class="skbar"><div class="skfill" style="width:88%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">Authentication Systems</span><span class="skp">90%</span></div><p class="sks">JWT session management · RBAC · Rate limiting · Account lockout · Brute-force protection</p><div class="skbar"><div class="skfill" style="width:90%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">API Integration</span><span class="skp">85%</span></div><p class="sks">M-Pesa Daraja API · OAuth token management · Idempotency · Webhook callback handling</p><div class="skbar"><div class="skfill" style="width:85%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">System Architecture</span><span class="skp">83%</span></div><p class="sks">Stateless REST · Horizontal scaling · Circuit-breaker design · Error propagation patterns</p><div class="skbar"><div class="skfill" style="width:83%"></div></div></div>
+    </div>
+    <div class="spanel" id="t-cryp">
+      <div class="skc"><div class="sk-r"><span class="skn">AES-256-GCM</span><span class="skp">92%</span></div><p class="sks">Authenticated encryption · Nonce management · GCM tag verification · Tamper detection</p><div class="skbar"><div class="skfill g" style="width:92%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">PBKDF2 / Argon2</span><span class="skp">88%</span></div><p class="sks">Password hardening · 100k iterations · NIST SP 800-132 · 256-bit random salt per hash</p><div class="skbar"><div class="skfill g" style="width:88%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">HMAC-SHA3-256</span><span class="skp">90%</span></div><p class="sks">Transaction signing · Non-repudiation · FIPS 202 · Deterministic JSON serialization</p><div class="skbar"><div class="skfill g" style="width:90%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">JWT / Session Security</span><span class="skp">87%</span></div><p class="sks">HS256 · Expiry · Token revocation · JTI selective invalidation · RBAC in claims</p><div class="skbar"><div class="skfill g" style="width:87%"></div></div></div>
+    </div>
+    <div class="spanel" id="t-bloc">
+      <div class="skc"><div class="sk-r"><span class="skn">Permissioned Blockchain</span><span class="skp">88%</span></div><p class="sks">Proof-of-Authority · Custom chain design · Block creation · Validator model · PoA consensus</p><div class="skbar"><div class="skfill" style="width:88%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">Merkle Trees</span><span class="skp">90%</span></div><p class="sks">O(n log n) construction · Bottom-up traversal · SHA-3 leaf hashing · Root verification</p><div class="skbar"><div class="skfill" style="width:90%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">Chain Integrity</span><span class="skp">92%</span></div><p class="sks">Hash-chaining · validate_chain() · Tamper detection at hash, block, and Merkle levels</p><div class="skbar"><div class="skfill" style="width:92%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">Transaction Architecture</span><span class="skp">86%</span></div><p class="sks">tx_id UUID deduplication · Pending pool · Force-mine capability · O(1) index dictionary</p><div class="skbar"><div class="skfill" style="width:86%"></div></div></div>
+    </div>
+    <div class="spanel" id="t-fin">
+      <div class="skc"><div class="sk-r"><span class="skn">Double-Entry Ledger</span><span class="skp">90%</span></div><p class="sks">Debit/credit enforcement · DB-level atomicity · Fee routing · Financial reconciliation</p><div class="skbar"><div class="skfill" style="width:90%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">AML Compliance</span><span class="skp">87%</span></div><p class="sks">Velocity checks · Structuring detection · SAR generation · OFAC sanctions screening</p><div class="skbar"><div class="skfill" style="width:87%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">M-Pesa / Mobile Money</span><span class="skp">85%</span></div><p class="sks">Daraja API · STK Push · State machine · CBK regulatory compliance · Kenya fintech</p><div class="skbar"><div class="skfill" style="width:85%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">FX Engine Design</span><span class="skp">82%</span></div><p class="sks">USD-pivot model · Bid/ask spread · TTL caching · Multi-currency (USD/EUR/GBP/KES/NGN)</p><div class="skbar"><div class="skfill" style="width:82%"></div></div></div>
+    </div>
+    <div class="spanel" id="t-db">
+      <div class="skc"><div class="sk-r"><span class="skn">SQLite WAL</span><span class="skp">90%</span></div><p class="sks">WAL journal mode · ACID transactions · Strategic indexing · Concurrent readers</p><div class="skbar"><div class="skfill" style="width:90%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">PostgreSQL</span><span class="skp">82%</span></div><p class="sks">Row-level locking · Connection pooling · Read replicas · Production schema migrations</p><div class="skbar"><div class="skfill" style="width:82%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">MySQL</span><span class="skp">80%</span></div><p class="sks">Database design · Query optimization · Stored procedures · Joins and indexing strategies</p><div class="skbar"><div class="skfill" style="width:80%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">Redis</span><span class="skp">68%</span></div><p class="sks">Session state · Rate limiting · Token revocation TTL · Production roadmap</p><div class="skbar"><div class="skfill" style="width:68%"></div></div></div>
+    </div>
+    <div class="spanel" id="t-dev">
+      <div class="skc"><div class="sk-r"><span class="skn">Git / GitHub</span><span class="skp">88%</span></div><p class="sks">Version control · Branching strategies · Code review · Collaborative development</p><div class="skbar"><div class="skfill" style="width:88%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">PyInstaller / Packaging</span><span class="skp">82%</span></div><p class="sks">Single .exe distribution · Windows deployment · Dependency bundling</p><div class="skbar"><div class="skfill" style="width:82%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">Dev Environments</span><span class="skp">85%</span></div><p class="sks">PyCharm · IntelliJ IDEA · VS Code · Agile methodologies · Testing & debugging</p><div class="skbar"><div class="skfill" style="width:85%"></div></div></div>
+      <div class="skc"><div class="sk-r"><span class="skn">Security Tooling</span><span class="skp">74%</span></div><p class="sks">Bandit (SAST) · pip-audit · Snyk · OWASP ZAP · TruffleHog secrets scanning</p><div class="skbar"><div class="skfill" style="width:74%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PHILOSOPHY ══ -->
+<section id="philosophy" class="sec">
+  <div class="wrap">
+    <div style="margin-bottom:3rem">
+      <div class="stag">🧠 Engineering Philosophy</div>
+      <h2 class="sh">How I Think <span>About Systems</span></h2>
+      <p class="sp">What separates production financial infrastructure from a demo is not features — it's rigour, paranoia, and the discipline to engineer for failure before engineering for success.</p>
+    </div>
+    <div class="phg">
+      <div class="plist">
+        <div class="pcard fu"><div class="pn">01</div><div><div class="pt">Secure-by-Design, Not Secure-by-Afterthought</div><p class="pd">Security is not a feature to bolt on — it's the structural foundation. Every system starts with a threat model. Cryptographic choices are explicitly justified: why AES-256-GCM over AES-CBC, why SHA-3 over SHA-2.</p></div></div>
+        <div class="pcard fu"><div class="pn">02</div><div><div class="pt">Financial Integrity is Non-Negotiable</div><p class="pd">Money is liability. Every design decision must prevent money from being lost, duplicated, or made inconsistent. INTEGER minor-unit storage and double-entry enforcement are foundations, not optimisations.</p></div></div>
+        <div class="pcard fu"><div class="pn">03</div><div><div class="pt">Explicit Over Implicit — Always</div><p class="pd">Autocommit databases in financial systems are a liability. Explicit transaction blocks with mandatory rollback make failure modes visible and auditable. ACID is a contract, and I honour it unconditionally.</p></div></div>
+        <div class="pcard fu"><div class="pn">04</div><div><div class="pt">Immutability as Audit Infrastructure</div><p class="pd">Append-only audit logs are the regulatory backbone of any compliant financial system. Combined with blockchain Merkle proofs, they create a tamper-evident record that survives insider threat scenarios.</p></div></div>
+        <div class="pcard fu"><div class="pn">05</div><div><div class="pt">Design for the Failure Case First</div><p class="pd">The happy path is easy. What if the network drops mid-transaction? What if two requests race on the same balance? These questions separate production systems from demos.</p></div></div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.85rem">STRIDE Threat Model — ChainPay</div>
+        <div class="stride-card">
+          <div class="stride-hdr">Threat Analysis & Security Controls</div>
+          <div class="stride-row"><div class="sl2">S</div><div><div class="st">Spoofing</div><div class="sc2">HMAC-signed transactions + JWT auth + PIN verification</div></div></div>
+          <div class="stride-row"><div class="sl2">T</div><div><div class="st">Tampering</div><div class="sc2">Blockchain Merkle tree + AES-GCM authenticated encryption</div></div></div>
+          <div class="stride-row"><div class="sl2">R</div><div><div class="st">Repudiation</div><div class="sc2">Immutable audit_log + blockchain proof + HMAC signatures</div></div></div>
+          <div class="stride-row"><div class="sl2">I</div><div><div class="st">Information Disclosure</div><div class="sc2">AES-256-GCM at rest + JWT RBAC + HTTPS in transit</div></div></div>
+          <div class="stride-row"><div class="sl2">D</div><div><div class="st">Denial of Service</div><div class="sc2">Rate limiting (30 req/min) + account lockout + 15s timeout</div></div></div>
+          <div class="stride-row"><div class="sl2">E</div><div><div class="st">Elevation of Privilege</div><div class="sc2">RBAC in JWT claims + admin endpoint authorization checks</div></div></div>
+        </div>
+        <div class="qbox">
+          <p class="qt">Amateur systems focus on features. Banking-grade systems focus on risk containment and provable integrity. Money is not software — money is liability, and liability must be engineered with paranoia.</p>
+          <div class="qa">— Reagan Obadha · ChainPay v2.0 Architecture Documentation</div>
+        </div>
+        <div class="owasp-wrap">
+          <div class="ow-lbl">OWASP Top 10 Coverage</div>
+          <div class="pills" style="margin-bottom:0">
+            <span class="pill pg">A01 Access Control</span><span class="pill pg">A02 Cryptography</span><span class="pill pg">A03 Injection</span><span class="pill pg">A04 Insecure Design</span><span class="pill pg">A07 Auth Failures</span><span class="pill pg">A08 Data Integrity</span><span class="pill pg">A09 Logging</span><span class="pill pg">A10 SSRF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="sec sec-bg">
+  <div class="wrap">
+    <div class="ctg">
+      <div>
+        <div class="stag">✉️ Contact</div>
+        <h2 class="sh">Let's Build<br><span>Something Real</span></h2>
+        <p class="sp">Open to engineering roles, collaborations, and technical discussions around fintech infrastructure, blockchain systems, and cybersecurity architecture.</p>
+        <div class="chlist">
+          <a href="mailto:reaganobadha07@gmail.com" class="chcard"><div class="chico ib">📧</div><div><div class="chlb">Email</div><div class="chvl">Reaganobadha07@gmail.com</div></div><span class="charr">→</span></a>
+          <a href="https://wa.me/254768858033" target="_blank" rel="noopener" class="chcard"><div class="chico ig">💬</div><div><div class="chlb">WhatsApp</div><div class="chvl">+254 768 858 033</div></div><span class="charr">→</span></a>
+          <a href="https://instagram.com/ctrl_reagan" target="_blank" rel="noopener" class="chcard"><div class="chico ip">📸</div><div><div class="chlb">Instagram</div><div class="chvl">@reaganobadha</div></div><span class="charr">→</span></a>
+        </div>
+        <div class="avcrd"><span class="avdot"></span><span class="avtxt">Available now · Nakuru, Kenya · Open to remote & relocation</span></div>
+      </div>
+      <div>
+        <div class="cfcard">
+          <div class="cfh">Send a Message</div>
+          <p class="cfs">I typically respond within 24 hours.</p>
+          <div class="fr2">
+            <div class="fg"><label class="flb">Your Name</label><input type="text" class="fi2" placeholder="John Doe"></div>
+            <div class="fg"><label class="flb">Company</label><input type="text" class="fi2" placeholder="Optional"></div>
+          </div>
+          <div class="fg"><label class="flb">Email Address</label><input type="email" class="fi2" placeholder="you@company.com"></div>
+          <div class="fg"><label class="flb">Subject</label><input type="text" class="fi2" placeholder="Role · Collaboration · Technical discussion"></div>
+          <div class="fg"><label class="flb">Message</label><textarea class="fta" placeholder="Tell me about the opportunity or project..."></textarea></div>
+          <button class="fsub" onclick="doSubmit(this)">Send Message →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="flogo">⬡ Reagan Obadha</div>
+  <div class="fcopy">© 2026 · Blockchain Engineer & Fintech Architect · Nakuru, Kenya</div>
+  <div class="flinks">
+    <a href="#home">Home</a>
+    <a href="#projects">ChainPay</a>
+    <a href="mailto:reaganobadha07@gmail.com">Email</a>
+    <a href="https://wa.me/254768858033" target="_blank">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+// Navbar
+window.addEventListener('scroll',()=>{ document.getElementById('nav').classList.toggle('scrolled',scrollY>20); });
+
+// Mobile nav
+function toggleNav(){ document.getElementById('mobNav').classList.toggle('show'); }
+function closeNav(){ document.getElementById('mobNav').classList.remove('show'); }
+document.addEventListener('click',e=>{
+  const mn=document.getElementById('mobNav'), bg=document.querySelector('.burger');
+  if(!mn.contains(e.target)&&!bg.contains(e.target)) mn.classList.remove('show');
+});
+
+// Skill tabs
+function showTab(id,btn){
+  document.querySelectorAll('.spanel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('on'));
+  document.getElementById('t-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+
+// Form
+function doSubmit(btn){
+  const orig=btn.textContent;
+  btn.textContent='✓ Message Sent!';
+  btn.style.background='var(--green)';
+  btn.disabled=true;
+  setTimeout(()=>{ btn.textContent=orig; btn.style.background=''; btn.disabled=false; }, 3000);
+}
+
+// Scroll fade-in
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('vis'), (parseFloat(e.target.dataset.d)||0)*1000); }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.fu').forEach((el,i)=>{ el.dataset.d=(i%6)*0.08; obs.observe(el); });
+
+// Active nav on scroll
+const secs=[...document.querySelectorAll('section[id]')];
+const nls=document.querySelectorAll('.nav-menu a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{ if(scrollY>=s.offsetTop-90) cur=s.id; });
+  nls.forEach(a=>{ const on=a.href.endsWith('#'+cur); a.style.color=on?'var(--blue)':''; a.style.background=on?'var(--blue-light)':''; });
+});
+</script>
+</body>
+</html>
