@@ -116,24 +116,41 @@ nav {
   display:flex; flex-direction:column; align-items:center; gap:1.5rem;
   padding: 3rem 2rem; text-align:center; width:100%;
 }
+
+/* PROFILE CIRCLE — fixed to not affect surrounding layout */
 .profile-circle {
-  width:150px; height:150px; border-radius:50%;
-  background: rgba(255,255,255,0.08);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   border: 3px solid rgba(255,255,255,0.2);
-  display:flex; align-items:center; justify-content:center;
-  font-family: var(--font-serif); font-size:2.8rem;
-  color: rgba(255,255,255,0.9);
   box-shadow: 0 0 0 10px rgba(255,255,255,0.05), 0 0 0 20px rgba(255,255,255,0.025);
-  position:relative;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden; /* keeps image clipped to circle */
+}
+.profile-circle img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .profile-badge {
-  position:absolute; bottom:-4px; right:-4px;
-  width:34px; height:34px; border-radius:50%;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
   background: var(--gold);
-  display:flex; align-items:center; justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid var(--green);
+  z-index: 2;
 }
 .profile-badge svg { width:14px; height:14px; fill:white; }
+
 .profile-name { font-family:var(--font-serif); font-size:1.4rem; color:rgba(255,255,255,0.95); line-height:1.2; }
 .profile-title { font-size:0.7rem; font-weight:500; color:rgba(255,255,255,0.5); letter-spacing:0.12em; text-transform:uppercase; line-height:1.9; }
 .profile-loc { display:flex; align-items:center; gap:0.4rem; font-size:0.78rem; color:rgba(255,255,255,0.55); }
@@ -519,29 +536,35 @@ footer strong { color:rgba(247,243,236,0.65); }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         Contact Me
       </a>
-      <a href="mailto:reaganobadha07@gmail.com?subject=CV%20Request" class="btn-sienna btn">
+      <!-- CV lives at cv/Reagan_Obadha_CV.pdf in your repo root -->
+      <a href="Reagan_Obadha_CV.pdf" download="Reagan_Obadha_CV.pdf" class="btn-sienna btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
         Download CV
       </a>
     </div>
   </div>
+
   <div class="hero-right">
     <div class="hero-right-inner fade-up fade-up-d2">
+
+      <!-- Profile image — fixed structure, does not affect surrounding layout -->
       <div class="profile-circle">
-  <img src="images/WhatsApp Image 2026-03-01 at 15.39.36.jpeg" alt="Reagan Obadha" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
-  <div class="profile-badge">
-    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
-  </div>
-</div>
+        <img src="images/WhatsApp Image 2026-03-01 at 15.39.36.jpeg" alt="Reagan Obadha">
+        <div class="profile-badge">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+        </div>
       </div>
+
       <div>
         <div class="profile-name">Reagan Obadha</div>
         <div class="profile-title">Software Engineer · Cybersecurity Specialist<br>ML Engineer · Fintech Architect</div>
       </div>
+
       <div class="profile-loc">
         <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         Nakuru, Kenya · Remote-Ready
       </div>
+
       <div class="hero-contact-links">
         <a href="mailto:reaganobadha07@gmail.com" class="hcl-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -558,12 +581,14 @@ footer strong { color:rgba(247,243,236,0.65); }
           WhatsApp Chat
           <span class="hcl-label">Chat</span>
         </a>
-        <a href="https://linkedin.com/in/reaganobadha" target="_blank" class="hcl-item">
+        <!-- Updated LinkedIn URL -->
+        <a href="https://www.linkedin.com/in/reagan-obadha-1517b23a3" target="_blank" class="hcl-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn Profile
           <span class="hcl-label">Connect</span>
         </a>
       </div>
+
     </div>
   </div>
 </section>
@@ -832,9 +857,10 @@ footer strong { color:rgba(247,243,236,0.65); }
             WhatsApp · +254 768 858 033
             <span class="clink-meta">Chat</span>
           </a>
-          <a href="https://linkedin.com/in/reaganobadha" target="_blank" class="clink">
+          <!-- Updated LinkedIn URL -->
+          <a href="https://www.linkedin.com/in/reagan-obadha-1517b23a3" target="_blank" class="clink">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            linkedin.com/in/reaganobadha
+            linkedin.com/in/reagan-obadha-1517b23a3
             <span class="clink-meta">Connect</span>
           </a>
         </div>
@@ -861,7 +887,7 @@ footer strong { color:rgba(247,243,236,0.65); }
     <a href="#about">About</a>
     <a href="#chainpay">ChainPay</a>
     <a href="mailto:reaganobadha07@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/reaganobadha" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/reagan-obadha-1517b23a3" target="_blank">LinkedIn</a>
   </div>
 </footer>
 
